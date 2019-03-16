@@ -46,7 +46,7 @@ class TestCaseIterator {
         }
         const searchEngines = this._readCollection();
         const queries = this._readCollection();
-        return new TestCase(this._currentTestCaseId, searchEngines, queries);
+        return new TestCase(this._currentTestCaseId++, searchEngines, queries);
     }
 
     next(){
