@@ -1,4 +1,4 @@
-const { TestCaseIterator } = require('../src/testCaseIterator');
+const TestCaseIterator = require('../src/testCaseIterator');
 
 describe("Parsing an input file", function() {
 
