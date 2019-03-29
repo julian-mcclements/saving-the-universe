@@ -2,21 +2,21 @@ function findFurthest (searchEngines, queries) {
     if(searchEngines.length === 0 || queries.length === 0) {
         return undefined;
     }
-    const indexes = {};
+    const firstIndexes = {};
     searchEngines.forEach((engine) => {
-        indexes[engine] = queries.indexOf(engine);
+        firstIndexes[engine] = queries.indexOf(engine);
     });
     let max = -1;
     let furthest = undefined;
-    for(const engine in indexes) {
-        const index = indexes[engine];
-        if (index === -1) {
-            furthest = engine;
+    for(const indexedEngine in firstIndexes) {
+        const indexOf = firstIndexes[indexedEngine];
+        if (indexOf === -1) {
+            furthest = indexedEngine;
             break;
         }
-        if (index > max){
-            furthest = engine;
-            max = index;
+        if (indexOf > max){
+            furthest = indexedEngine;
+            max = indexOf;
         }
     }
     return furthest

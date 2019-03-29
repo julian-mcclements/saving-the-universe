@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/julian-mcclements/saving-the-universe#readme",
   "dependencies": {
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "jasmine": "^3.3.1"

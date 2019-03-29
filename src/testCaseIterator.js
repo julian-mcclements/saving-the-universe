@@ -54,9 +54,12 @@ class TestCaseIterator {
     }
 
     static create(path) {
+        const WIN_NEWLINE = "\r\n";
+        const UNIX_NEWLINE = "\n";
         try {  
             const content = fs.readFileSync(path, 'utf8');
-            return new TestCaseIterator(content.split(/\r\n/));
+            const newLine = content.indexOf(WIN_NEWLINE) !== -1 ? WIN_NEWLINE : UNIX_NEWLINE;
+            return new TestCaseIterator(content.split(newLine));
         } catch(e) {
             console.log('Error:', e.message, e.stack);
         }
@@ -64,4 +67,4 @@ class TestCaseIterator {
 
 }
 
-exports.TestCaseIterator = TestCaseIterator;
+module.exports = TestCaseIterator;
